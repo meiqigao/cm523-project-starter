@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your University</title>
+  <style>
+
+    body {
+      background-color: #fbf8f8;
+      font-family: 'Lucida Handwriting', cursive;
+      margin: 0;
+      padding-bottom: 5px;
+
+    }
+.title-box {
+  background-color: black;
+  color: white; 
+  padding: 5px 10px;
+  width:100%;
+}
+
+.title-box h1 {
+  font-size: 48px;
+  font-family: 'Lucida Handwriting', cursive;
+}
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+    }
+    .search-bar {
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 3px 20px;
+      font-style: italic;
+      width: 30%;
+      border-radius: 5px;
+      border: 1.1px solid #c1c0bc;
+    }
+    .search-bar input {
+      border: none;
+      background: transparent;
+      text-align: center;
+      font-size: 20px;
+      outline: none;
+
+    }
+    .search-icon {
+  color: #888;
+  font-size: 15px;
+}
+#searchInput{
+  text-align: left;
+}
+#searchInput::placeholder {
+  color: rgb(124, 115, 115); 
+  opacity: 0.6; 
+  text-align: left;       
+  font-size: 12px;   
+}
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .map-container img {
+  width: 500px;
+  height: auto;
+  /* If you want the image to stay at a fixed height regardless of school info */
+  max-height: 500px;
+  object-fit: contain;
+}
+    .school-Info {
+      flex: 1 1 45%;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+ 
+      display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-top: 20px;
+    }
+    .school-Info.active {
+      display: block;
+    }
+
+    .school {
+      background: #f0f0f0;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+    .filters {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .filter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .filter label {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .filter input {
+      width: 60px;
+      height: 20px;
+      background-color: #f0f4ec;
+      border: 1px solid #888;
+      text-align: center;
+    }
+    .dropdown-container {
+  display: none;
+  text-align: center;
+  margin: 20px;
+}
+
+.dropdown-container select {
+  font-size: 18px;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    display: none;
+  }
+  .dropdown-container {
+    display: block;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="title-box">
+    <h1>Choose Your University</h1>
+  </div>
+
+  <div class="search-bar">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" id="searchInput" placeholder="  Search">
+  </div>
+
+  <div class="main-content">
+    <div class="map-container">
+      <img id="usMap" src="map.jpg" alt="US Map" usemap="#usmap">
+      <map name="usmap">
+        <!-- Example clickable areas for a few states -->
+        <area shape="poly" coords="431,127,441,133,445,114,434,105,435,118" alt="NJ" href="#" onclick="showSchoolInfo('NJ')">
+        <area shape="poly" coords="391,105,430,98,445,110,445,114,459,110,456,105,445,109,443,85,436,63,422,67,415,77,414,87,395,91,395,99" alt="NY" href="#" onclick="showSchoolInfo('NY')">
+        <area shape="poly" coords="61,250,89,251,97,227,52,154,58,114,19,100,11,126,28,212" alt="CA" href="#" onclick="showSchoolInfo('CA')">
+        <area shape="poly" coords="301,112,295,137,314,172,327,153,325,118,322,110" alt="IL" href="#" onclick="showSchoolInfo('IL')">
+        <area shape="poly" coords="446,107,460,99,458,93,445,97" alt="CT" href="#" onclick="showSchoolInfo('CT')">
+        <area shape="poly" coords="364,194,394,189,409,190,420,199,425,198,435,188,442,172,438,163,384,173" alt="NC" href="#" onclick="showSchoolInfo('NC')">
+        <area shape="poly" coords="388,129,400,132,429,126,434,118,431,101,386,108,390,130" alt="PA" href="#" onclick="showSchoolInfo('PA')">
+        <area shape="poly" coords="460,100,466,97,462,92,459,94" alt="RI" href="#" onclick="showSchoolInfo('RI')">
+        <area shape="poly" coords="327,119,349,117,352,146,343,159,327,162" alt="IN" href="#" onclick="showSchoolInfo('IN')">
+        <area shape="poly" coords="33,36,33,11,49,9,91,21,85,51" alt="DC" href="#" onclick="showSchoolInfo('DC')">
+        <area shape="poly" coords="374,172,379,164,394,160,414,136,421,146,430,146,436,162" alt="VA" href="#" onclick="showSchoolInfo('VA')">
+        <area shape="poly" coords="311,181,382,172,359,193,308,196" alt="TN" href="#" onclick="showSchoolInfo('TN')">
+        <area shape="poly" coords="186,181,215,183,215,205,270,220,274,261,238,292,239,306,219,302,200,262,184,260,179,269,149,235,182,233" alt="TX" href="#" onclick="showSchoolInfo('TX')">
+        <area shape="poly" coords="265,183,257,136,291,135,314,180," alt="MO" href="#" onclick="showSchoolInfo('MO')">
+        <area shape="poly" coords="333,116,324,79,298,64,347,61,363,89,364,115" alt="MI" href="#" onclick="showSchoolInfo('MI')">
+        <area shape="poly" coords="443,87,463,82,468,94,460,91,443,94" alt="MA" href="#" onclick="showSchoolInfo('MA')">
+        <area shape="poly" coords="416,304,420,283,398,240,364,245,336,244,338,252,363,258,372,251,389,264,289.276" alt="FL" href="#" onclick="showSchoolInfo('FL')">
+
+
+
+
+
+      </map>
+    </div>
+
+    <div id="school-Info">
+    </div>
+  </div>
+
+  <div class="filters">
+    <div class="filter">
+      <label>SAT</label>
+      <input type="number" placeholder="---">
+    </div>
+    <div class="filter">
+      <label>ACT</label>
+      <input type="number" placeholder="---">
+    </div>
+    <div class="filter">
+      <label>TOEFL</label>
+      <input type="number" placeholder="---">
+    </div>
+    <div class="filter">
+      <label>GPA</label>
+      <input type="number" step="0.01" placeholder="---">
+    </div>
+  </div>
+  <div class="dropdown-container">
+    <select id="stateSelect">
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+      
+      <!-- Add more states here -->
+    </select>
+  </div>
+  <script>
+document.getElementById("stateSelect").addEventListener("change", function() {
+  const selectedState = this.value;
+  if (selectedState && schools[selectedState]) {
+    const infoBox = document.querySelector('.school-Info');
+    infoBox.innerHTML = schools[selectedState];
+    infoBox.classList.add('active');
+  }
+});
+
+const schools = {
+  "CA": `
+  <div class="school"><h2>Stanford University</h2>
+    <p><strong>Ranking:</strong> 4</p>
+    <p><strong>Tuition:</strong> $65,910</p>
+    <p><strong>Location:</strong> Stanford, CA</p>
+    <p><strong>Acceptance Rate:</strong> 4%</p>
+    <p><strong>Application Deadline:</strong> 1.5</p>
+    <p><strong>SAT Range:</strong> 1510 - 1580</p>
+    <p><strong>ACT Range:</strong> 34 - 35</p>
+    <p><strong>High School GPA:</strong> 3.9</p>
+
+    <h2>University of California--Los Angeles</h2>
+    <p><strong>Ranking:</strong> 15</p>
+    <p><strong>Tuition:</strong> $14,208</p>
+    <p><strong>Location:</strong> Los Angeles, CA</p>
+    <p><strong>Acceptance Rate:</strong> 9%</p>
+    <p><strong>Application Deadline:</strong> 11.30</p>
+    <p><strong>SAT Range:</strong> N/A</p>
+    <p><strong>ACT Range:</strong> N/A</p>
+    <p><strong>High School GPA:</strong> 3.9</p>
+
+<h2>University of California, Berkeley</h2>
+    <p><strong>Ranking:</strong> 17</p>
+    <p><strong>Tuition:</strong> $16,832</p>
+    <p><strong>Location:</strong> Berkeley, CA</p>
+    <p><strong>Acceptance Rate:</strong> 12%</p>
+    <p><strong>Application Deadline:</strong> 11.30</p>
+    <p><strong>SAT Range:</strong> N/A</p>
+    <p><strong>ACT Range:</strong> N/A</p>
+    <p><strong>High School GPA:</strong> 3.9</p>
+
+    <h2>University of Southern California</h2>
+    <p><strong>Ranking:</strong> 27</p>
+    <p><strong>Tuition:</strong> $71,647</p>
+    <p><strong>Location:</strong> Los Angeles, CA</p>
+    <p><strong>Acceptance Rate:</strong> 10%</p>
+    <p><strong>Application Deadline:</strong> 1.15</p>
+    <p><strong>SAT Range:</strong> 1440 - 1550</p>
+    <p><strong>ACT Range:</strong> 32 - 35</p>
+    <p><strong>High School GPA:</strong> 3.9</p>
+
+    <h2>University of California, San Diego</h2>
+    <p><strong>Ranking:</strong> 29</p>
+    <p><strong>Tuition:</strong> $16,815</p>
+    <p><strong>Location:</strong> La Jolla, CA</p>
+    <p><strong>Acceptance Rate:</strong> 25%</p>
+    <p><strong>Application Deadline:</strong> 11.30</p>
+    <p><strong>SAT Range:</strong> N/A</p>
+    <p><strong>ACT Range:</strong> N/A</p>
+    <p><strong>High School GPA:</strong> 3.9</p></div>`,
+  "NY": `
+  <div class="school"><h2>Columbia University</h2>
+    <p><strong>Tuition:</strong> $62,400</p>
+    <p><strong>Location:</strong> New York, NY</p>
+    <p><strong>Acceptance Rate:</strong> 4%</p>
+    <p><strong>Application Deadline:</strong> N/A</p>
+    <p><strong>SAT Range:</strong> 1490 - 1580</p>
+    <p><strong>ACT Range:</strong> 34 - 35</p>
+    <p><strong>High School GPA:</strong> N/A</p>
+
+    <h2>Cornell University</h2>
+    <p><strong>Tuition:</strong> $69,314</p>
+    <p><strong>Location:</strong> Ithaca, NY</p>
+    <p><strong>Acceptance Rate:</strong> 8%</p>
+    <p><strong>Application Deadline:</strong> 1.2</p>
+    <p><strong>SAT Range:</strong> 1480 - 1560</p>
+    <p><strong>ACT Range:</strong> 33 - 35</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+    `,
+  "CT": `
+  <div class="school"><h2>Yale University</h2>
+    <p><strong>Tuition:</strong> $67,250</p>
+    <p><strong>Location:</strong> New Haven, CT</p>
+    <p><strong>Acceptance Rate:</strong> 5%</p>
+    <p><strong>Application Deadline:</strong> 1.2</p>
+    <p><strong>SAT Range:</strong> 1500 - 1580</p>
+    <p><strong>ACT Range:</strong> 33 - 35</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+  `,
+  "NC": `
+  <div class="school"> <h2>Duke University</h2>
+    <p><strong>Tuition:</strong> $69,140</p>
+    <p><strong>Location:</strong> Durham, NC</p>
+    <p><strong>Acceptance Rate:</strong> 7%</p>
+    <p><strong>Application Deadline:</strong> 1.2</p>
+    <p><strong>SAT Range:</strong> 1520 - 1570</p>
+    <p><strong>ACT Range:</strong> 34 - 35</p>
+    <p><strong>High School GPA:</strong> N/A</p>
+
+    <h2>University of North Carolina--Chapel Hill</h2>
+    <p><strong>Tuition:</strong> $9,003</p>
+    <p><strong>Location:</strong> Chapel Hill, NC</p>
+    <p><strong>Acceptance Rate:</strong> 19%</p>
+    <p><strong>Application Deadline:</strong> 1.15</p>
+    <p><strong>SAT Range:</strong> 1370 - 1530</p>
+    <p><strong>ACT Range:</strong> 30 - 34</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>`,
+"IL":`
+<div class="school"> <h2>Northwestern University</h2>
+    <p><strong>Ranking:</strong> 6</p>
+    <p><strong>Tuition:</strong> $68,322</p>
+    <p><strong>Location:</strong> Evanston, IL</p>
+    <p><strong>Acceptance Rate:</strong> 7%</p>
+    <p><strong>Application Deadline:</strong> 1.1</p>
+    <p><strong>SAT Range:</strong> 1490 - 1580</p>
+    <p><strong>ACT Range:</strong> 33 - 35</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+  `,
+  "PA": `
+  <div class="school"><h2>University of Pennsylvania</h2>
+    <p><strong>Ranking:</strong> 10</p>
+    <p><strong>Tuition:</strong> $68,686</p>
+    <p><strong>Location:</strong> Philadelphia, PA</p>
+    <p><strong>Acceptance Rate:</strong> 6%</p>
+    <p><strong>Application Deadline:</strong> 1.5</p>
+    <p><strong>SAT Range:</strong> 1500 - 1570</p>
+    <p><strong>ACT Range:</strong> 34 - 35</p>
+    <p><strong>High School GPA:</strong> 3.9</p></div>
+  `,
+  "RI": `
+  <div class="school"><h2>Brown University</h2>
+    <p><strong>Ranking:</strong> 13</p>
+    <p><strong>Tuition:</strong> $71,312</p>
+    <p><strong>Location:</strong> Providence, RI</p>
+    <p><strong>Acceptance Rate:</strong> 5%</p>
+    <p><strong>Application Deadline:</strong> 1.3</p>
+    <p><strong>SAT Range:</strong> 1500 - 1570</p>
+    <p><strong>ACT Range:</strong> 34 - 35</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+  `,
+  "IN": `
+  <div class="school"><h2>University of Notre Dame</h2>
+    <p><strong>Ranking:</strong> 18</p>
+    <p><strong>Tuition:</strong> $65,025</p>
+    <p><strong>Location:</strong> Notre Dame, IN</p>
+    <p><strong>Acceptance Rate:</strong> 12%</p>
+    <p><strong>Application Deadline:</strong> 1.3</p>
+    <p><strong>SAT Range:</strong> 1440 - 1540</p>
+    <p><strong>ACT Range:</strong> 33 - 35</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+  `,
+  "DC": `
+  <div class="school"><h2>Georgetown University</h2>
+    <p><strong>Ranking:</strong> 24</p>
+    <p><strong>Tuition:</strong> $68,016</p>
+    <p><strong>Location:</strong> Washington, DC</p>
+    <p><strong>Acceptance Rate:</strong> 13%</p>
+    <p><strong>Application Deadline:</strong> 1.10</p>
+    <p><strong>SAT Range:</strong> 1390 - 1550</p>
+    <p><strong>ACT Range:</strong> 32 - 34</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+  `,
+  "VA": `
+  <div class="school"><h2>University of Virginia</h2>
+    <p><strong>Ranking:</strong> 24</p>
+    <p><strong>Tuition:</strong> $23,118</p>
+    <p><strong>Location:</strong> Charlottesville, VA</p>
+    <p><strong>Acceptance Rate:</strong> 17%</p>
+    <p><strong>Application Deadline:</strong> 1.5</p>
+    <p><strong>SAT Range:</strong> 1410 - 1530</p>
+    <p><strong>ACT Range:</strong> 32 - 34</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+  `,
+  "TN": `
+  <div class="school"><h2>Vanderbilt University</h2>
+    <p><strong>Ranking:</strong> 18</p>
+    <p><strong>Tuition:</strong> $67,498</p>
+    <p><strong>Location:</strong> Nashville, TN</p>
+    <p><strong>Acceptance Rate:</strong> 6%</p>
+    <p><strong>Application Deadline:</strong> 1.1</p>
+    <p><strong>SAT Range:</strong> 1510 - 1560</p>
+    <p><strong>ACT Range:</strong> 34 - 35</p>
+    <p><strong>High School GPA:</strong> 3.9</p></div>
+  `,
+  "TX": `
+  <div class="school"><h2>Rice University</h2>
+    <p><strong>Ranking:</strong> 18</p>
+    <p><strong>Tuition:</strong> $60,709</p>
+    <p><strong>Location:</strong> Houston, TX</p>
+    <p><strong>Acceptance Rate:</strong> 8%</p>
+    <p><strong>Application Deadline:</strong> 1.4</p>
+    <p><strong>SAT Range:</strong> 1500 - 1570</p>
+    <p><strong>ACT Range:</strong> 34 - 36</p>
+    <p><strong>High School GPA:</strong> N/A</p>
+
+    <h2>The University of Texas--Austin</h2>
+    <p><strong>Ranking:</strong> 30</p>
+    <p><strong>Tuition:</strong> $11,678</p>
+    <p><strong>Location:</strong> Austin, TX</p>
+    <p><strong>Acceptance Rate:</strong> 29%</p>
+    <p><strong>Application Deadline:</strong> 12.1</p>
+    <p><strong>SAT Range:</strong> 1310 - 1520</p>
+    <p><strong>ACT Range:</strong> 29 - 34</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+  `,
+  "MO": `
+  <div class="school"><h2>Washington University in St. Louis</h2>
+    <p><strong>Ranking:</strong> 21</p>
+    <p><strong>Tuition:</strong> $65,790</p>
+    <p><strong>Location:</strong> St. Louis, MO</p>
+    <p><strong>Acceptance Rate:</strong> 12%</p>
+    <p><strong>Application Deadline:</strong> 1.2</p>
+    <p><strong>SAT Range:</strong> 1500 - 1570</p>
+    <p><strong>ACT Range:</strong> 33 - 35</p>
+    <p><strong>High School GPA:</strong> N/A</p></div>
+  `,
+  "MI": `
+  <div class="school"> <h2>University of Michigan--Ann Arbor</h2>
+    <p><strong>Ranking:</strong> 21</p>
+    <p><strong>Tuition:</strong> $18,848</p>
+    <p><strong>Location:</strong> Ann Arbor, MI</p>
+    <p><strong>Acceptance Rate:</strong> 18%</p>
+    <p><strong>Application Deadline:</strong> 2.1</p>
+    <p><strong>SAT Range:</strong> 1350 - 1530</p>
+    <p><strong>ACT Range:</strong> 31 - 34</p>
+    <p><strong>High School GPA:</strong> 3.9</p></div>
+  `,
+  "FL": `
+  <div class="school"><h2>University of Florida</h2>
+    <p><strong>Ranking:</strong> 30</p>
+    <p><strong>Tuition:</strong> $6,381</p>
+    <p><strong>Location:</strong> Gainesville, FL</p>
+    <p><strong>Acceptance Rate:</strong> 24%</p>
+    <p><strong>Application Deadline:</strong> 3.1</p>
+    <p><strong>SAT Range:</strong> 1300 - 1480</p>
+    <p><strong>ACT Range:</strong> 28 - 32</p>
+    <p><strong>High School GPA:</strong> 3.9</p></div>
+  `,
+  "MA": `
+  <div class="school"> <h2>Harvard University</h2>
+    <p><strong>Tuition:</strong> $61,676</p>
+    <p><strong>Location:</strong> Cambridge, MA</p>
+    <p><strong>Acceptance Rate:</strong> 3%</p>
+    <p><strong>Application Deadline:</strong> 1.1</p>
+    <p><strong>SAT Range:</strong> 1500 - 1580</p>
+    <p><strong>ACT Range:</strong> 34 - 36</p>
+    <p><strong>High School GPA:</strong> 3.9</p></div>
+  `,
+  "NJ": `
+  <div class="school"><h2>Princeton University</h2>
+    <p><strong>Tuition:</strong> $62,400</p>
+    <p><strong>Location:</strong> Princeton, NJ</p>
+    <p><strong>Acceptance Rate:</strong> 4%</p>
+    <p><strong>Application Deadline:</strong> 1.1</p>
+    <p><strong>SAT Range:</strong> 1500 - 1580</p>
+    <p><strong>ACT Range:</strong> 34 - 35</p>
+    <p><strong>High School GPA:</strong> 3.9</p></div>
+  `
+};
+
+    function showSchoolInfo(state) {
+      const html = schools[state];
+      if (html) {
+    const infoBox = document.getElementById('school-Info');
+    infoBox.innerHTML = `
+      <button id="closeInfo" style="
+      position:abosolute;
+
+        grid-column: span 2;
+        background-color:black ;
+        color: white;
+        border: none;
+        padding: 2px 4px;
+        font-size: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+      ">X</button>
+      ${html}
+    `;
+    infoBox.classList.add('active');
+
+    // Attach event listener for the close button
+    document.getElementById('closeInfo').addEventListener('click', function() {
+      infoBox.classList.remove('active');
+      infoBox.innerHTML = '';
+    });
+  }
+    }
+
+
+    document.getElementById('searchInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        alert('Searching for: ' + this.value);
+      }
+    });
+
+    document.getElementById('usMap').addEventListener('click', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = Math.round(e.clientX - rect.left);
+      const y = Math.round(e.clientY - rect.top);
+      console.log('X:', x, 'Y:', y);
+    });
+    document.addEventListener("click", function(e) {
+  const infoBox = document.querySelector('.school-Info');
+  const usMap = document.getElementById("usMap");
+
+  if (
+    infoBox.classList.contains('active') &&
+    !infoBox.contains(e.target) &&
+    !usMap.contains(e.target)
+  ) {
+    infoBox.classList.remove('active');
+    infoBox.innerHTML = '';
+  }
+});
+const universityIndex = [];
+
+// Build index on page load
+for (const [state, html] of Object.entries(schools)) {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = html;
+
+  const schoolBlocks = tempDiv.querySelectorAll('.school');
+  schoolBlocks.forEach(block => {
+    const name = block.querySelector('h2')?.innerText.trim();
+    if (name) {
+      universityIndex.push({
+        name: name.toLowerCase(),  // for case-insensitive match
+        html: block.outerHTML
+      });
+    }
+  });
+}
+
+// Search input listener (live typing)
+document.getElementById('searchInput').addEventListener('input', function(e) {
+  const query = e.target.value.toLowerCase().trim();
+  const infoBox = document.getElementById('school-Info');
+
+  if (!query) {
+    infoBox.classList.remove('active');
+    infoBox.innerHTML = '';
+    return;
+  }
+
+  const match = universityIndex.find(item => item.name.includes(query));
+  if (match) {
+    infoBox.innerHTML = `
+    <button id="closeInfo" style="
+
+        grid-column: span 1;
+        background-color:black ;
+        color: white;
+        border: none;
+        padding: 2px 4px;
+        font-size: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+     
+      ">X</button>
+      ${match.html}
+    `;
+    infoBox.classList.add('active');
+
+    // Add close button event
+    document.getElementById('closeInfo').addEventListener('click', function() {
+      infoBox.classList.remove('active');
+      infoBox.innerHTML = '';
+    });
+  } else {
+    infoBox.classList.remove('active');
+    infoBox.innerHTML = '';
+  }
+});
+  </script>
+</body>
+</html>
