@@ -4,8 +4,134 @@
 /* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
 
 body {
-    background: magenta;
+      background-color: #fbf8f8;
+      font-family: 'Lucida Handwriting', cursive;
+      margin: 0;
+      padding-bottom: 5px;
+
+    }
+.title-box {
+  background-color: black;
+  color: white; 
+  padding: 5px 10px;
+  width:100%;
 }
-p {
-    font-size: 2em;
+
+.title-box h1 {
+  font-size: 48px;
+  font-family: 'Lucida Handwriting', cursive;
 }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+    }
+    .search-bar {
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 3px 20px;
+      font-style: italic;
+      width: 30%;
+      border-radius: 5px;
+      border: 1.1px solid #c1c0bc;
+    }
+    .search-bar input {
+      border: none;
+      background: transparent;
+      text-align: center;
+      font-size: 20px;
+      outline: none;
+
+    }
+    .search-icon {
+  color: #888;
+  font-size: 15px;
+}
+#searchInput{
+  text-align: left;
+}
+#searchInput::placeholder {
+  color: rgb(124, 115, 115); 
+  opacity: 0.6; 
+  text-align: left;       
+  font-size: 12px;   
+}
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .map-container img {
+  width: 500px;
+  height: auto;
+  /* If you want the image to stay at a fixed height regardless of school info */
+  max-height: 500px;
+  object-fit: contain;
+}
+    .school-Info {
+      flex: 1 1 45%;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+ 
+      display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-top: 20px;
+    }
+    .school-Info.active {
+      display: block;
+    }
+
+    .school {
+      background: #f0f0f0;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+    .filters {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .filter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .filter label {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .filter input {
+      width: 60px;
+      height: 20px;
+      background-color: #f0f4ec;
+      border: 1px solid #888;
+      text-align: center;
+    }
+    .dropdown-container {
+  display: none;
+  text-align: center;
+  margin: 20px;
+}
+
+.dropdown-container select {
+  font-size: 18px;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    display: none;
+  }
+  .dropdown-container {
+    display: block;
+  }
+}
+
