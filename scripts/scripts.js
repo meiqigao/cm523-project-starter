@@ -282,7 +282,6 @@ const schools = {
     `;
     infoBox.classList.add('active');
 
-    // Attach event listener for the close button
     document.getElementById('closeInfo').addEventListener('click', function() {
       infoBox.classList.remove('active');
       infoBox.innerHTML = '';
@@ -318,7 +317,6 @@ const schools = {
 });
 const universityIndex = [];
 
-// Build index on page load
 for (const [state, html] of Object.entries(schools)) {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = html;
@@ -328,14 +326,13 @@ for (const [state, html] of Object.entries(schools)) {
     const name = block.querySelector('h2')?.innerText.trim();
     if (name) {
       universityIndex.push({
-        name: name.toLowerCase(),  // for case-insensitive match
+        name: name.toLowerCase(),  
         html: block.outerHTML
       });
     }
   });
 }
 
-// Search input listener (live typing)
 document.getElementById('searchInput').addEventListener('input', function(e) {
   const query = e.target.value.toLowerCase().trim();
   const infoBox = document.getElementById('school-Info');
@@ -365,7 +362,6 @@ document.getElementById('searchInput').addEventListener('input', function(e) {
     `;
     infoBox.classList.add('active');
 
-    // Add close button event
     document.getElementById('closeInfo').addEventListener('click', function() {
       infoBox.classList.remove('active');
       infoBox.innerHTML = '';
