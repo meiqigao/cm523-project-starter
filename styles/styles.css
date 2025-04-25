@@ -67,7 +67,6 @@ body {
     .map-container img {
   width: 500px;
   height: auto;
-  /* If you want the image to stay at a fixed height regardless of school info */
   max-height: 500px;
   object-fit: contain;
 }
