@@ -126,12 +126,12 @@ overflow: hidden;
 padding: 5px 0;
 position: absolute;
 bottom: 0;
-height: 80px; 
+height: 80px; /* 直接给它一个固定高度，比如80px */
 
 }
 .logo-slider {
 overflow: hidden;
-height: 70px;
+height: 70px; /* 可以改更窄 */
 position: relative;
 width: 100%;
 }
@@ -186,9 +186,7 @@ margin-top: -150px;
 .right-component{
 flex-direction: column;
 margin-right: 100px;
-
 }
-
 @media (max-width: 768px) {
  
   .top-bar button {
@@ -214,23 +212,25 @@ margin-right: 100px;
   }
 
   .right-paragraph {
-    font-size: 16px;
+    font-size: 13px;
     max-width: 90%;
     text-align: center;
     margin: 20px auto;
   }
 
   .enter-button {
-    position: static;
-    margin: 30px auto;
+    position: relative;
+    top:-30px;
+    margin: 20px auto;
     display: block;
     padding: 10px 20px;
     font-size: 16px;
   }
 
   .logo-scroller {
-    position: static;
+    position: relative;
     height: auto;
+    top:-30px;
     padding: 10px 0;
   }
   .logo-slider {
@@ -247,7 +247,7 @@ margin-right: 100px;
   }
 
   .subtitle, .name {
-    font-size: 16px;
+    font-size: 13px;
     margin-top: 20px;
   }
 
@@ -263,3 +263,4 @@ margin-right: 100px;
     text-align: center;
   }
 }
+
