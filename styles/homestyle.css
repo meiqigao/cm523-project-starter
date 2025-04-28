@@ -126,12 +126,12 @@ overflow: hidden;
 padding: 5px 0;
 position: absolute;
 bottom: 0;
-height: 80px; /* 直接给它一个固定高度，比如80px */
+height: 80px; 
 
 }
 .logo-slider {
 overflow: hidden;
-height: 70px; /* 可以改更窄 */
+height: 70px;
 position: relative;
 width: 100%;
 }
@@ -187,5 +187,79 @@ margin-top: -150px;
 flex-direction: column;
 margin-right: 100px;
 
+}
 
+@media (max-width: 768px) {
+ 
+  .top-bar button {
+    margin: 10px 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 40px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .left-title {
+    font-size: 40px;
+    margin-right: 0;
+    margin-top: 0;
+    transform: none;
+    animation: none;
+    opacity: 1;
+  }
+
+  .right-paragraph {
+    font-size: 16px;
+    max-width: 90%;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .enter-button {
+    position: static;
+    margin: 30px auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .logo-scroller {
+    position: static;
+    height: auto;
+    padding: 10px 0;
+  }
+  .logo-slider {
+    height: auto;
+  }
+  .logo-track img {
+    width: 50px;
+    margin: 0 15px;
+  }
+
+  .left-side {
+    align-items: center;
+    text-align: center;
+  }
+
+  .subtitle, .name {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .school-img {
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .right-component {
+    margin-right: 0;
+    align-items: center;
+    text-align: center;
+  }
 }
