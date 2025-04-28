@@ -14,5 +14,5 @@ document.getElementById('enter-Button').addEventListener('click', function() {
     localStorage.setItem('userGPA', gpaInputValue);
   
     // Then jump to school.html
-    window.location.href = 'school.html';
+    window.location.href = '../school.html';
   });
