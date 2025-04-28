@@ -1,0 +1,191 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Delius Unicase", cursive;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 232, 208);
+    overflow-x: hidden;
+  }
+
+  .top-bar button {
+    margin-top: 10px;
+    margin-left: 40px;
+margin-right: 20px;
+padding: 14px 28px;
+border: none;
+background: linear-gradient(135deg, #f9d423, #ff4e50); /* colorful gradient */
+color: white;
+font-size: 18px;
+font-weight: bold;
+border-radius: 50px; /* very round */
+cursor: pointer;
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+font-family: "DynaPuff", cursive;
+}
+
+.top-bar button:hover {
+background: linear-gradient(135deg, #ff4e50, #f9d423); /* reverse gradient */
+transform: scale(1.1); /* grow a bit on hover */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.top-bar button:active {
+transform: scale(0.95); /* small when clicking */
+}
+
+
+  /* Main content area */
+  .main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  .left-title {
+font-family: "Delius Unicase", cursive;
+font-size: 80px;
+font-weight: bold;
+margin-right: 300px;
+color: rgb(7, 7, 7);
+line-height: 1.2;
+white-space: pre-line;
+margin-top: -300px; 
+
+
+/* Animation */
+animation: slideIn 1s ease-out forwards;
+opacity: 0;
+transform: translateX(-100px);
+  }
+
+.right-paragraph {
+    font-family: "Delius Unicase", cursive;
+text-align: center;
+    font-size: 18px;
+    color: black;
+    max-width: 2000px;
+  }
+
+
+  /* Keyframes for slide-in animation */
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes pulseGlow {
+0% {
+  transform: scale(1);
+}
+50% {
+  transform: scale(1.15);
+}
+100% {
+  transform: scale(1);
+}
+}
+
+.enter-button {
+position: absolute;
+bottom: 120px;
+right: 50px;
+padding: 8px 20px;
+background: black; /* same gradient */
+color: white;
+font-size: 18px;
+font-weight: bold;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+font-family: "DynaPuff", cursive;
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+animation: pulseGlow 2s infinite; /* keep the pulsing effect */
+}
+
+.enter-button:hover {
+background: linear-gradient(135deg, black, #ff9a9e);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.enter-button:active {
+transform: scale(0.95);
+}
+
+
+.logo-scroller {
+width: 100%;
+overflow: hidden;
+padding: 5px 0;
+position: absolute;
+bottom: 0;
+height: 80px; /* 直接给它一个固定高度，比如80px */
+
+}
+.logo-slider {
+overflow: hidden;
+height: 70px; /* 可以改更窄 */
+position: relative;
+width: 100%;
+}
+
+
+.logo-track {
+display: flex;
+width: calc(200%); 
+animation: scroll 30s linear infinite;
+}
+
+.logo-track img {
+width: 80px;
+height: auto;
+margin: 0 25px;
+}
+
+@keyframes scroll {
+0% {
+  transform: translateX(0);
+}
+100% {
+  transform: translateX(-50%);
+}
+}
+.left-side {
+display: flex;
+flex-direction: column;
+align-items: flex-start; /* align to the left */
+}
+
+.subtitle {
+margin-top: 30px;
+font-size: 20px;
+color: #666;
+font-family: "Delius Unicase", cursive;
+text-align: center;
+}
+.name {
+margin-top: 30px;
+font-size: 15px;
+color: #666;
+font-family: "Delius Unicase", cursive;
+text-align: center;
+}
+.school-img{
+width: 450px;
+  height: auto;
+  margin-bottom: 30px;
+margin-top: -150px;
+}
+.right-component{
+flex-direction: column;
+margin-right: 100px;
+
+
+}

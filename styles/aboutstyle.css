@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: rgb(245, 232, 208);
+    font-family: "Delius Unicase", cursive;
+  }
+  .top-bar button {
+    margin-top: 10px;
+    margin-left: 40px;
+margin-right: 20px;
+padding: 14px 28px;
+border: none;
+background: linear-gradient(135deg, #f9d423, #ff4e50); /* colorful gradient */
+color: white;
+font-size: 18px;
+font-weight: bold;
+border-radius: 50px; /* very round */
+cursor: pointer;
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+font-family: "DynaPuff", cursive;
+}
+
+.top-bar button:hover {
+background: linear-gradient(135deg, #ff4e50, #f9d423); /* reverse gradient */
+transform: scale(1.1); /* grow a bit on hover */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.top-bar button:active {
+transform: scale(0.95); /* small when clicking */
+}
+
+
+  .top-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-pic img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .intro-box {
+background: linear-gradient(135deg, #ffecd2, #fcb69f); /* 橘黄橙系渐变 */
+color: #5c4033; /* 深棕色字体，暖色系更搭 */
+padding: 40px;
+border-radius: 20px;
+flex-grow: 1;
+font-size: 18px;
+line-height: 1.8;
+margin-top: 40px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+position: relative;
+transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+}
+
+/* 悬停时变亮一点，像阳光 */
+.intro-box:hover {
+transform: translateY(-5px);
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+background: linear-gradient(135deg, #fcb69f, #ffecd2); /* 渐变反转 */
+}
+
+
+
+
+  .intro-box h1 {
+    font-family: "DynaPuff", cursive;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+.materials{
+  flex-direction:row;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+margin-left: 200px;
+}
+
+
+.materials h2 {
+font-family: "DynaPuff", cursive;
+font-size: 28px;
+background: linear-gradient(135deg, #fcb7b7, #f7a1c4); /* 粉色渐变 */
+-webkit-background-clip: text;
+color: transparent;
+transition: transform 0.3s ease, text-shadow 0.3s ease;
+cursor: pointer;
+text-align: center;
+}
+
+.materials h2:hover {
+transform: scale(1.1);
+text-shadow: 2px 2px 8px rgba(247, 161, 196, 0.7); /* hover 时柔粉光影 */
+}
+
+.materials a {
+text-decoration: none;
+color: inherit; /* 保持跟h2一样 */
+}
