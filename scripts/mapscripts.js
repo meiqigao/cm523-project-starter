@@ -624,201 +624,37 @@ document.getElementById('searchInput').addEventListener('input', function(e) {
     infoBox.classList.remove('active');
   }
 });
-//add gpa function
-document.getElementById('gpaInput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    const gpaInputValue = parseFloat(this.value);
-    const infoBox = document.getElementById('school-Info');
 
-    infoBox.innerHTML = ""; // Clear previous results first
+//for iphone
+const stateSelect = document.getElementById('stateSelect');
+const infoBox = document.getElementById('infoBox'); 
 
-    if (isNaN(gpaInputValue)) {
-      infoBox.innerHTML = `<p>Please enter a valid GPA.</p>`;
-      infoBox.classList.add('active');
-      return;
-    }
+stateSelect.addEventListener('change', function () {
+  const selectedState = this.value;
+  
+  infoBox.innerHTML = ''; 
+  
+  const filteredSchools = schools.filter(school => school.state === selectedState);
 
-    const matchedSchools = schools.filter(school => {
-      const schoolGPA = parseFloat(school.gpa);
-      return !isNaN(schoolGPA) && schoolGPA <= gpaInputValue;
-    });
-
-    if (matchedSchools.length === 0) {
-      infoBox.innerHTML = `<p>No schools found with GPA <= ${gpaInputValue}</p>`;
-      infoBox.classList.add('active');
-      return;
-    }
-
-    // Add close button
-    infoBox.innerHTML = `
-      <button id="closeInfo" style="
-        grid-column: span 2;
-        background-color:black;
-        color: white;
-        border: none;
-        padding: 2px 4px;
-        font-size: 12px;
-        border-radius: 5px;
-        cursor: pointer;
-      ">X</button>
-    `;
-
-    matchedSchools.forEach(school => {
-      const card = document.createElement('div');
-      card.className = "school";
-      card.innerHTML = `
-        <h2>${school.name}</h2>
-        <p><strong>Ranking:</strong> ${school.ranking ?? "N/A"}</p>
-        <p><strong>Tuition:</strong> $${school.tuition}</p>
-        <p><strong>Location:</strong> ${school.city}, ${school.state}</p>
-        <p><strong>Acceptance Rate:</strong> ${school.acceptanceRate}</p>
-        <p><strong>Application Deadline:</strong> ${school.deadline}</p>
-        <p><strong>SAT Range:</strong> ${school.satRange}</p>
-        <p><strong>ACT Range:</strong> ${school.actRange}</p>
-        <p><strong>High School GPA:</strong> ${school.gpa}</p>
-      `;
-      infoBox.appendChild(card);
-    });
-
-    infoBox.classList.add('active');
-
-    document.getElementById('closeInfo').addEventListener('click', function() {
-      infoBox.classList.remove('active');
-      infoBox.innerHTML = '';
-    });
+  if (filteredSchools.length === 0) {
+    infoBox.innerHTML = `<p>No schools found for ${selectedState}</p>`;
+    return;
   }
-});
-///act score
-document.getElementById('actInput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    const actInputValue = parseFloat(this.value);
-    const infoBox = document.getElementById('school-Info');
 
-    infoBox.innerHTML = ""; // Clear previous results first
-
-    if (isNaN(actInputValue)) {
-      infoBox.innerHTML = `<p>Please enter a valid ACT score.</p>`;
-      infoBox.classList.add('active');
-      return;
-    }
-
-    const matchedSchools = schools.filter(school => {
-      if (school.actRange && school.actRange !== "N/A") {
-        const actRange = school.actRange.split('-').map(n => parseInt(n.trim()));
-        return actRange.length === 2 && actInputValue >= actRange[0] && actInputValue <= actRange[1];
-      }
-      return false;
-    });
-
-    if (matchedSchools.length === 0) {
-      infoBox.innerHTML = `<p>No schools found with ACT including ${actInputValue}</p>`;
-      infoBox.classList.add('active');
-      return;
-    }
-
-    // Add close button
-    infoBox.innerHTML = `
-      <button id="closeInfo" style="
-        grid-column: span 2;
-        background-color:black;
-        color: white;
-        border: none;
-        padding: 2px 4px;
-        font-size: 12px;
-        border-radius: 5px;
-        cursor: pointer;
-      ">X</button>
+  filteredSchools.forEach(school => {
+    const card = document.createElement('div');
+    card.className = "school"; // You can make the .school class mobile-friendly in CSS
+    card.innerHTML = `
+      <h2>${school.name}</h2>
+      <p><strong>Ranking:</strong> ${school.ranking ?? "N/A"}</p>
+      <p><strong>Tuition:</strong> $${school.tuition}</p>
+      <p><strong>Location:</strong> ${school.city}, ${school.state}</p>
+      <p><strong>Acceptance Rate:</strong> ${school.acceptanceRate}</p>
+      <p><strong>Application Deadline:</strong> ${school.deadline}</p>
+      <p><strong>SAT Range:</strong> ${school.satRange}</p>
+      <p><strong>ACT Range:</strong> ${school.actRange}</p>
+      <p><strong>High School GPA:</strong> ${school.gpa}</p>
     `;
-
-    matchedSchools.forEach(school => {
-      const card = document.createElement('div');
-      card.className = "school";
-      card.innerHTML = `
-        <h2>${school.name}</h2>
-        <p><strong>Ranking:</strong> ${school.ranking ?? "N/A"}</p>
-        <p><strong>Tuition:</strong> $${school.tuition}</p>
-        <p><strong>Location:</strong> ${school.city}, ${school.state}</p>
-        <p><strong>Acceptance Rate:</strong> ${school.acceptanceRate}</p>
-        <p><strong>Application Deadline:</strong> ${school.deadline}</p>
-        <p><strong>SAT Range:</strong> ${school.satRange}</p>
-        <p><strong>ACT Range:</strong> ${school.actRange}</p>
-        <p><strong>High School GPA:</strong> ${school.gpa}</p>
-      `;
-      infoBox.appendChild(card);
-    });
-
-    infoBox.classList.add('active');
-
-    document.getElementById('closeInfo').addEventListener('click', function() {
-      infoBox.classList.remove('active');
-      infoBox.innerHTML = '';
-    });
-  }
-});
-/// sat input
-document.getElementById('satInput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    const satInputValue = parseFloat(this.value);
-    const infoBox = document.getElementById('school-Info');
-
-    infoBox.innerHTML = ""; // Clear previous results first
-
-    if (isNaN(satInputValue)) {
-      infoBox.innerHTML = `<p>Please enter a valid SAT score.</p>`;
-      infoBox.classList.add('active');
-      return;
-    }
-
-    const matchedSchools = schools.filter(school => {
-      if (school.satRange && school.satRange !== "N/A") {
-        const satRange = school.satRange.split('-').map(n => parseInt(n.trim()));
-        return satRange.length === 2 && satInputValue >= satRange[0] && satInputValue <= satRange[1];
-      }
-      return false;
-    });
-
-    if (matchedSchools.length === 0) {
-      infoBox.innerHTML = `<p>No schools found with SAT including ${satInputValue}</p>`;
-      infoBox.classList.add('active');
-      return;
-    }
-
-    // Add close button
-    infoBox.innerHTML = `
-      <button id="closeInfo" style="
-        grid-column: span 2;
-        background-color:black;
-        color: white;
-        border: none;
-        padding: 2px 4px;
-        font-size: 12px;
-        border-radius: 5px;
-        cursor: pointer;
-      ">X</button>
-    `;
-
-    matchedSchools.forEach(school => {
-      const card = document.createElement('div');
-      card.className = "school";
-      card.innerHTML = `
-        <h2>${school.name}</h2>
-        <p><strong>Ranking:</strong> ${school.ranking ?? "N/A"}</p>
-        <p><strong>Tuition:</strong> $${school.tuition}</p>
-        <p><strong>Location:</strong> ${school.city}, ${school.state}</p>
-        <p><strong>Acceptance Rate:</strong> ${school.acceptanceRate}</p>
-        <p><strong>Application Deadline:</strong> ${school.deadline}</p>
-        <p><strong>SAT Range:</strong> ${school.satRange}</p>
-        <p><strong>ACT Range:</strong> ${school.actRange}</p>
-        <p><strong>High School GPA:</strong> ${school.gpa}</p>
-      `;
-      infoBox.appendChild(card);
-    });
-
-    infoBox.classList.add('active');
-
-    document.getElementById('closeInfo').addEventListener('click', function() {
-      infoBox.classList.remove('active');
-      infoBox.innerHTML = '';
-    });
-  }
+    infoBox.appendChild(card);
+  });
 });
