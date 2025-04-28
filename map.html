@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="mapstyles.css">
+  <meta charset="UTF-8">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your University</title>
+ 
+</head>
+<body>
+    <div class="top-bar">
+        <a href="web.html"><button>Home</button></a>
+        <a href="about.html"><button>About</button></a>
+        <a href="map.html"><button>Map</button></a>
+      </div>
+
+  <div class="search-bar">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" id="searchInput" placeholder="  Search">
+  </div>
+
+  <div class="main-content">
+    <div class="map-container">
+      <img id="usMap" src="map.jpg" alt="US Map" usemap="#usmap">
+      <map name="usmap">
+
+        <area shape="poly" coords="143,144,188,157,175,204,236,294,229,298,229,305,225,316,222,319,192,313,184,293,180,293,180,287,171,284,168,277,154,273,156,263,146,240,151,232,145,225,147,214,142,210,142,202,136,193,140,179,135,168" alt="CA" href="#" onclick="showSchoolInfo('CA')">
+    
+        <area shape="poly" coords="166,76,170,43,182,53,195,50,192,39,248,56,243,100,214,95,198,97,177,87,179,82" alt="WA" href="#" onclick="showSchoolInfo('WA')">
+        <area shape="poly" coords="167,80,176,84,176,92,243,102,246,108,231,126,233,131,225,163,144,141,144,130" alt="OR" href="#" onclick="showSchoolInfo('OR')">
+        <area shape="poly" coords="193,158,260,173,243,266,235,263,230,278,180,204" alt="NV" href="#" onclick="showSchoolInfo('NV')">
+        <area shape="poly" coords="252,56,260,58,257,74,261,77,259,83,271,98,265,115,274,115,274,125,282,131,281,136,299,134,302,139,295,177,228,163,238,131,233,126,248,108,244,96" alt="ID" href="#" onclick="showSchoolInfo('ID')">
+        <area shape="poly" coords="282,231,261,174,294,180,293,199,314,200,307,261,247,250" alt="UT" href="#" onclick="showSchoolInfo('UT')">
+        <area shape="poly" coords="247,254,307,264,296,352,268,350,224,322,239,296,232,281,236,266,243,268" alt="AZ" href="#" onclick="showSchoolInfo('AZ')">
+        <area shape="poly" coords="262,58,387,77,381,139,305,129,301,135,298,132,282,133,282,128,276,124,276,112,267,111,275,97,261,82,263,76,258,72" alt="MT" href="#" onclick="showSchoolInfo('MT')">
+        <area shape="poly" coords="305,131,381,142,377,202,295,195" alt="WY" href="#" onclick="showSchoolInfo('WY')">
+        <area shape="poly" coords="317,200,403,207,398,268,311,260" alt="CO" href="#" onclick="showSchoolInfo('CO')">
+        <area shape="poly" coords="311,266,384,272,377,352,331,346,331,351,309,348,306,355,298,354" alt="NM" href="#" onclick="showSchoolInfo('NM')">
+        <area shape="poly" coords="390,78,463,83,470,128,385,122" alt="ND" href="#" onclick="showSchoolInfo('ND')">
+        <area shape="poly" coords="386,125,381,170,447,174,459,177,468,182,470,167,470,149,466,132" alt="SD" href="#" onclick="showSchoolInfo('SD')">
+        <area shape="poly" coords="383,174,381,201,405,205,405,223,481,222,466,184,458,180,451,180,445,176" alt="NE" href="#" onclick="showSchoolInfo('NE')">
+        <area shape="poly" coords="405,226,401,269,492,271,491,239,487,232,488,229" alt="KS" href="#" onclick="showSchoolInfo('KS')">
+        <area shape="poly" coords="388,272,387,279,427,281,424,313,435,316,445,320,450,324,460,326,465,324,472,327,485,323,495,329,492,275" alt="OK" href="#" onclick="showSchoolInfo('OK')">
+        <area shape="poly" coords="472,168,470,183,480,215,529,213,531,216,538,201,546,194,533,178,533,168,529,167" alt="IO" href="#" onclick="showSchoolInfo('IO')">
+        <area shape="poly" coords="481,218,491,226,489,231,496,281,553,282,552,287,557,287,560,278,565,273,560,269,559,262,546,252,550,242,543,241,527,214" alt="MO" href="#" onclick="showSchoolInfo('MO')">
+        <area shape="poly" coords="532,110,522,116,518,124,512,129,516,135,513,145,529,157,536,171,534,176,540,180,570,176,577,141,566,150,572,135,566,127,554,122,537,115,535,115,532,110" alt="WI" href="#" onclick="showSchoolInfo('WI')">
+        <area shape="poly" coords="603,126,590,145,588,161,594,176,588,188,625,186,630,175,636,168,628,148,617,153,623,138,618,130,603,125" alt="MI" href="#" onclick="showSchoolInfo('MI')">
+        <area shape="poly" coords="542,182,548,196,539,200,539,208,532,218,543,240,552,240,548,251,560,262,562,267,571,269,574,263,576,250,582,239,578,193,569,179,555,180" alt="IL" href="#" onclick="showSchoolInfo('IL')">
+        <area shape="poly" coords="581,193,584,238,579,249,578,254,603,246,615,236,609,189,594,189" alt="IN" href="#" onclick="showSchoolInfo('IN')">
+        <area shape="poly" coords="562,279,567,277,566,271,575,271,575,264,579,264,579,257,606,248,616,239,617,233,620,233,620,238,635,241,641,237,644,243,642,269,628,269,578,274,572,276" alt="KY" href="#" onclick="showSchoolInfo('KY')">
+        <area shape="poly" coords="579,275,560,282,560,294,552,297,556,302,628,300,658,269,615,273" alt="TN" href="#" onclick="showSchoolInfo('TN')">
+        <area shape="poly" coords="553,305,541,321,539,336,545,349,538,368,561,369,568,380,575,377,580,378,578,305,561" alt="MS" href="#" onclick="showSchoolInfo('MS')">
+        <area shape="poly" coords="581,304,583,375,587,371,590,380,594,379,592,368,626,363,624,353,624,343,611,302" alt="AL" href="#" onclick="showSchoolInfo('AL')">
+        <area shape="poly" coords="504,341,503,352,510,367,505,380,505,391,516,392,526,394,538,392,546,400,569,399,565,396,568,387,561,385,565,383,560,373,560,370,537,369,543,351,537,339" alt="LA" href="#" onclick="showSchoolInfo('LA')">
+        <area shape="poly" coords="595,369,626,364,631,368,667,366,670,361,677,361,690,390,697,393,694,397,706,416,707,415,707,443,697,449,688,438,685,437,682,430,675,430,668,417,668,409,666,391,660,387,654,384,648,377,640,376,632,383,626,383,618,377,608,374,597,377" alt="FL" href="#" onclick="showSchoolInfo('FL')">
+        <area shape="poly" coords="614,302,643,298,680,337,677,352,678,359,669,359,666,364,631,367,625,353,626,344,617,311" alt="GA" href="#" onclick="showSchoolInfo('GA')">
+        <area shape="poly" coords="645,298,683,337,687,331,703,307,706,305,688,291,676,295,672,291,659,291" alt="SC" href="#" onclick="showSchoolInfo('SC')">
+        <area shape="poly" coords="631,297,660,269,733,253,738,263,742,265,736,273,728,274,733,282,731,286,722,291,715,302,706,304,689,291,676,293,674,290,660,290,644,295" alt="NC" href="#" onclick="showSchoolInfo('NC')">
+        <area shape="poly" coords="648,267,732,251,730,248,723,244,721,233,708,228,709,219,701,217,693,219,684,234,680,234,676,252,662,256,651,255" alt="VA" href="#" onclick="showSchoolInfo('VA')">
+        <area shape="poly" coords="646,240,655,254,673,251,679,231,684,233,699,215,693,213,683,216,679,213,666,214,662,208,650,231,647,239" alt="WV" href="#" onclick="showSchoolInfo('WV')">
+        <area shape="poly" coords="662,178,667,211,726,203,735,192,726,187,727,186,730,173,723,167,669,175,666,174,663,177" alt="PA" href="#" onclick="showSchoolInfo('PA')">
+        <area shape="poly" coords="668,173,722,166,741,178,743,181,761,174,760,172,753,175,745,174,740,160,741,160,742,147,735,126,732,116,714,115,702,133,707,141,696,149,676,151" alt="NY" href="#" onclick="showSchoolInfo('NY')">
+        <area shape="poly" coords="770,65,774,67,779,61,787,63,789,83,803,95,780,117,773,121,770,132,769,133,763,118,758,103,764,88,765,79" alt="ME" href="#" onclick="showSchoolInfo('ME')">
+        <area shape="poly" coords="753,106,758,105,767,133,770,136,764,141,752,144,752,122,752,119,757,114" alt="NH" href="#" onclick="showSchoolInfo('NH')">
+        <area shape="poly" coords="734,113,749,107,753,113,749,119,749,145,744,145,739,130,735,119" alt="VT" href="#" onclick="showSchoolInfo('VT')">
+        <area shape="poly" coords="745,148,743,156,768,152,774,159,785,154,776,149,770,148,772,143,770,139,760,144" alt="MA" href="#" onclick="showSchoolInfo('MA')">
+        <area shape="poly" coords="767,165,772,162,768,155,765,155" alt="RI" href="#" onclick="showSchoolInfo('RI')">
+        <area shape="poly" coords="764,166,757,167,748,172,743,161,762,156" alt="CT" href="#" onclick="showSchoolInfo('CT')">
+        <area shape="poly" coords="733,176,729,185,737,191,729,201,738,210,745,198,741,180" alt="NJ" href="#" onclick="showSchoolInfo('NJ')">
+        <area shape="poly" coords="726,206,729,206,737,218,731,220" alt="DE" href="#" onclick="showSchoolInfo('DE')">
+        <area shape="poly" coords="681,213,722,206,730,223,736,223,736,228,730,230,725,226,720,210,718,222,722,230,712,228,715,218,693,211,682,216" alt="MD" href="#" onclick="showSchoolInfo('MD')">
+        <area shape="poly" coords="612,190,616,230,622,230,623,235,637,237,640,234,647,238,662,204,661,181,639,193,628,188" alt="OH" href="#" onclick="showSchoolInfo('OH')">
+        <area shape="poly" coords="386,283,379,353,332,348,349,369,351,370,355,387,372,400,380,393,381,388,387,386,391,390,399,390,408,400,426,427,430,443,446,451,453,453,458,450,453,438,456,428,467,416,484,405,505,392,506,375,509,368,501,354,501,332,495,330,482,323,472,328,463,324,460,326,450,324,444,320,437,320,435,316,423,315,425,282,386,280" alt="TX" href="#" onclick="showSchoolInfo('TX')">
+        <area shape="poly" coords="496,284,496,328,502,328,504,338,538,335,538,324,552,303,548,296,557,292,557,289,549,288,552,280" alt="AR" href="#" onclick="showSchoolInfo('AR')">
+
+    
+      </map>
+    </div>
+
+    <div id="school-Info">
+    </div>
+  </div>
+
+
+
+  <div class="dropdown-container">
+    <select id="stateSelect">
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+      
+    </select>
+  </div>
+  <script src="scripts.js">
+
+    
+  </script>
+</body>
+</html>

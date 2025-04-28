@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose Your University</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Delius Unicase", cursive;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(245, 232, 208);
+      overflow-x: hidden;
+    }
+
+    .top-bar button {
+      margin-top: 10px;
+      margin-left: 40px;
+  margin-right: 20px;
+  padding: 14px 28px;
+  border: none;
+  background: linear-gradient(135deg, #f9d423, #ff4e50); /* colorful gradient */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px; /* very round */
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  font-family: "DynaPuff", cursive;
+}
+
+.top-bar button:hover {
+  background: linear-gradient(135deg, #ff4e50, #f9d423); /* reverse gradient */
+  transform: scale(1.1); /* grow a bit on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.top-bar button:active {
+  transform: scale(0.95); /* small when clicking */
+}
+
+
+    /* Main content area */
+    .main-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .left-title {
+  font-family: "Delius Unicase", cursive;
+  font-size: 80px;
+  font-weight: bold;
+  margin-right: 300px;
+  color: rgb(7, 7, 7);
+  line-height: 1.2;
+  white-space: pre-line;
+  margin-top: -300px; 
+
+
+  /* Animation */
+  animation: slideIn 1s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-100px);
+    }
+
+  .right-paragraph {
+      font-family: "Delius Unicase", cursive;
+text-align: center;
+      font-size: 18px;
+      color: black;
+      max-width: 2000px;
+    }
+
+
+    /* Keyframes for slide-in animation */
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.enter-button {
+  position: absolute;
+  bottom: 120px;
+  right: 50px;
+  padding: 8px 20px;
+  background: black; /* same gradient */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "DynaPuff", cursive;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  animation: pulseGlow 2s infinite; /* keep the pulsing effect */
+}
+
+.enter-button:hover {
+  background: linear-gradient(135deg, black, #ff9a9e);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.enter-button:active {
+  transform: scale(0.95);
+}
+
+
+.logo-scroller {
+  width: 100%;
+  overflow: hidden;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 0;
+  height: 80px; /* 直接给它一个固定高度，比如80px */
+
+}
+.logo-slider {
+  overflow: hidden;
+  height: 70px; /* 可以改更窄 */
+  position: relative;
+  width: 100%;
+}
+
+
+.logo-track {
+  display: flex;
+  width: calc(200%); 
+  animation: scroll 30s linear infinite;
+}
+
+.logo-track img {
+  width: 80px;
+  height: auto;
+  margin: 0 25px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align to the left */
+}
+
+.subtitle {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #666;
+  font-family: "Delius Unicase", cursive;
+  text-align: center;
+}
+.name {
+  margin-top: 30px;
+  font-size: 15px;
+  color: #666;
+  font-family: "Delius Unicase", cursive;
+  text-align: center;
+}
+.school-img{
+  width: 450px;
+    height: auto;
+    margin-bottom: 30px;
+margin-top: -150px;
+}
+.right-component{
+  flex-direction: column;
+  margin-right: 100px;
+
+
+}
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="web.html"><button>Home</button></a>
+    <a href="about.html"><button>About</button></a>
+    <a href="map.html"><button>Map</button></a>
+  </div>
+
+  <div class="main-content">
+    <div class="left-side">
+    <div class="left-title">Choose Your <br> University</div>
+    <div class="subtitle">&nbsp;&nbsp;Find your perfect college match</div>
+    <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designed by Meiqi Gao</div>
+  </div>
+  <div class="right-component">
+  <div class="school-image">  <img src="school.jpg" class="school-img"></div>
+    <div class="right-paragraph">
+    
+      This website helps you quickly search for and learn about universities across different states in the U.S.
+Through the map or search function, you can find detailed information about each university, such as rankings, tuition fees, acceptance rates, and more.You can also enter your own scores to find the matched unversity.
+    </div>
+   </div>
+  </div>
+
+  <a href="score.html"><button class="enter-button">🎓 &nbsp;Enter</button></a>
+  <div class="logo-scroller">
+    <div class="logo-track">
+      <img src="Harvard_University.svg.png" alt="School 1">
+      <img src="Seal_of_Leland_Stanford_Junior_University.svg.png" alt="School 2">
+      <img src="University_of_Illinois_seal.svg.png" alt="School 3">
+      <img src="Boston_College_seal.svg.png" alt="School 4">
+      <img src="University-of-Wisconsin-Logo-Jamie+Black+(1).png" alt="School 5">
+      <img src="BU.png" alt="School 6">
+      <img src="The_University_of_California_UCLA.svg.png" alt="School 7">
+      <img src="UCB.png" alt="School 8">
+      <img src="UC_Santa_Barbara_Seal.png" alt="School 9">
+      <img src="University_of_Southern_California_(USC)_seal.svg.png" alt="School 10">
+      <img src="Seal_of_the_University_of_California,_San_Diego.svg.png" alt="School 11">
+      <img src="The_University_of_California_Davis.svg.png" alt="School 12">
+      <img src="Harvard_University.svg.png" alt="School 1">
+      <img src="Seal_of_Leland_Stanford_Junior_University.svg.png" alt="School 2">
+      <img src="University_of_Illinois_seal.svg.png" alt="School 3">
+      <img src="Boston_College_seal.svg.png" alt="School 4">
+      <img src="University-of-Wisconsin-Logo-Jamie+Black+(1).png" alt="School 5">
+      <img src="images.png" alt="School 6">
+      <img src="The_University_of_California_UCLA.svg.png" alt="School 7">
+      <img src="images2.png" alt="School 8">
+      <img src="UC_Santa_Barbara_Seal.png" alt="School 9">
+      <img src="University_of_Southern_California_(USC)_seal.svg.png" alt="School 10">
+      <img src="Seal_of_the_University_of_California,_San_Diego.svg.png" alt="School 11">
+      <img src="The_University_of_California_Davis.svg.png" alt="School 12">
+
+
+
+    </div>
+  </div>
+  
+
+</body>
+</html>

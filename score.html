@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Input Your Scores</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="scorestyle.css">
+
+
+
+
+</head>
+<body>
+    <div class="top-bar">
+        <a href="home.html"><button>Home</button></a>
+        <a href="about.html"><button>About</button></a>
+        <a href="map.html"><button>Map</button></a>
+      </div>
+ <div class="input-wrapper">
+      <img src="logo.jpg" class="score-img">
+  <div class="input-section">
+    <div class="input-group">
+      <label for="sat">SAT</label>
+      <input type="number" id="satInput" placeholder="Enter your SAT score">
+    </div>
+
+    <div class="input-group">
+      <label for="act">ACT</label>
+      <input type="number" id="actInput" placeholder="Enter your ACT score">
+    </div>
+
+    <div class="input-group">
+      <label for="gpa">GPA</label>
+      <input type="number" id="gpaInput" step="0.01" placeholder="Enter your GPA">
+    </div>
+  </div>
+</div>
+
+  <button class="enter-button"  id="enter-Button">Go</button>
+<script src="scorescripts.js">
+  
+</script>
+</body>
+</html>
