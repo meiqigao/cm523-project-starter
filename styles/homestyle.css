@@ -219,8 +219,7 @@ margin-right: 100px;
   }
 
   .enter-button {
-    position: relative;
-    top:-30px;
+    position:static;
     margin: 20px auto;
     display: block;
     padding: 5px 10px;
