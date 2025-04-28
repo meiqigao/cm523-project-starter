@@ -238,11 +238,12 @@ margin-right: 100px;
     margin-top: 20px;
   }
 
-  .school-img {
-    width: 80%;
-    margin-bottom: 10px;
-  }
 
+  .school-img {
+     width: 80%;
+     margin-top: 0;
+     margin-bottom: 20px;
+   }
   .right-component {
     margin-right: 0;
     align-items: center;
