@@ -1,4 +1,10 @@
+  function openSidebar() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
 
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
 const schools = [
   {
     name: "Massachusetts Institute of Technology",
