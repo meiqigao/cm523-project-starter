@@ -9,7 +9,6 @@ body {
     overflow-x: hidden;
   }
 
-  /* Top bar with Home and Map buttons */
   .top-bar button {
     margin-top: 10px;
     margin-left: 40px;
@@ -25,6 +24,47 @@ cursor: pointer;
 box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 font-family: "DynaPuff", cursive;
+}
+.hamburger {
+  display: none;
+}
+.nav-buttons {
+  display: flex;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 9999; 
+}
+
+.sidebar a {
+  padding: 16px 30px;
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  display: block;
+  border-bottom: 1px solid #555;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
 }
 
 .top-bar button:hover {
@@ -214,6 +254,20 @@ margin-top: 100px;
 
   .input-wrapper {
     margin-top: 50px;
+  }
+    .hamburger {
+    display: block;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 10000;
+  }
+  
+  .top-bar .nav-buttons {
+    display: none;
   }
 
 }
