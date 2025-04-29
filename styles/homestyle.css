@@ -12,6 +12,9 @@ body {
 .hamburger {
   display: none;
 }
+.nav-buttons {
+  display: flex;
+}
 
 .sidebar {
   height: 100%;
@@ -78,7 +81,6 @@ transform: scale(0.95);
 }
 
 
-  /* Main content area */
   .main-content {
     flex: 1;
     display: flex;
@@ -105,7 +107,7 @@ transform: translateX(-100px);
   }
 
 .right-paragraph {
-    font-family: "Delius Unicase", cursive;
+    font-family: "Delius", cursive;
 text-align: center;
     font-size: 18px;
     color: black;
