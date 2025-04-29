@@ -69,6 +69,20 @@ Through the map or search function, you can find detailed information about each
     </div>
   </div>
   
+<div id="mySidebar" class="sidebar">
+  <div class="close-btn" onclick="closeSidebar()">×</div>
+  <a href="home.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="map.html">Map</a>
+</div>
+  <script>
+  function openSidebar() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
 
+  function closeSidebar() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+</script>
 </body>
 </html>
