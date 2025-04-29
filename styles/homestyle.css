@@ -274,11 +274,12 @@ display: none;
   margin-top: 20px;
 }
 
-  .school-img {
-    width: 150px;
-    margin: 20px auto;
-  }
 
+.school-img {
+  width: 60%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .right-component {
   margin-right: 0;
   align-items: center;
