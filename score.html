@@ -38,28 +38,59 @@
       <input type="number" id="gpaInput" step="0.01" placeholder="Enter your GPA">
     </div>
   </div>
-</div>
+  <div class="division-buttons">
+    <input type="radio" id="division1" name="division" value="1">
+    <label for="division1">NCAA Division I</label>
+  
+    <input type="radio" id="division2" name="division" value="2">
+    <label for="division2">NCAA Division II</label>
+  
+    <input type="radio" id="division3" name="division" value="3">
+    <label for="division3">NCAA Division III</label>
+  </div>
+  
+  
+  
 
   <button class="enter-button"  id="enter-Button">Go</button>
 <script>
+  document.querySelectorAll('input[name="division"]').forEach((elem) => {
+  elem.addEventListener("change", function(event) {
+    const selectedDivision = event.target.value;
+    localStorage.setItem('userDivision', selectedDivision);
+
+  });
+});
+
    document.getElementById('enter-Button').addEventListener('click', function() {
   const satInputValue = parseFloat(document.getElementById('satInput').value);
   const actInputValue = parseFloat(document.getElementById('actInput').value);
   const gpaInputValue = parseFloat(document.getElementById('gpaInput').value);
+  const divisionSelected = document.querySelector('input[name="division"]:checked');
 
-  if (isNaN(satInputValue) || isNaN(actInputValue) || isNaN(gpaInputValue)) {
+if (!divisionSelected) {
+  alert('Please select the NCAA Division.');
+  return;
+}
+
+
+  if (isNaN(satInputValue) && isNaN(actInputValue) && isNaN(gpaInputValue)){
     alert('Please enter valid SAT, ACT, and GPA scores.');
     return;
   }
 
-  // Save all three scores into localStorage
+
+
+
   localStorage.setItem('userSAT', satInputValue);
   localStorage.setItem('userACT', actInputValue);
   localStorage.setItem('userGPA', gpaInputValue);
 
-  // Then jump to school.html
   window.location.href = 'school.html';
 });
+
+
+
 </script>
 </body>
 </html>
