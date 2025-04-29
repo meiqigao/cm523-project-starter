@@ -6,7 +6,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Delius Unicase", cursive;
+  font-family: "DynaPuff", cursive;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -227,10 +227,10 @@ transform: scale(0.95);
     height: 20px;
   }
 
-  .search-bar {
-    margin: 20px auto;
-    padding: 10px 16px;
-  }
+.search-bar {
+  margin: 80px auto 20px; 
+  padding: 10px 16px;
+}
 
   #searchInput {
     width: 200px;
