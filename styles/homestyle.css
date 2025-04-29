@@ -257,13 +257,13 @@ margin-right: 100px;
 display:none;
   }
 
-  .enter-button {
-    position:static;
-    margin: 20px auto;
-    display: block;
-    padding: 5px 10px;
-    font-size: 16px;
-  }
+    .enter-button {
+  position: relative; 
+  margin: 80px auto 20px; 
+  display: block;
+  padding: 5px 10px;
+  font-size: 16px;
+}
 .logo-scroller {
   display: none;
 }
