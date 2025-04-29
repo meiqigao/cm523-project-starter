@@ -1,5 +1,114 @@
 
-const schools = [{
+const schools = [
+  {
+    name: "Massachusetts Institute of Technology",
+    state: "MA",
+    ranking: 2,
+    tuition: 62396,
+    city: "Cambridge",
+    acceptanceRate: "5%",
+    deadline: "1.1",
+    satRange: "1510-1580",
+    actRange: "34-36",
+    gpa: "N/A",
+    Division:3,
+  },
+  {
+    name: "California Institute of Technology",
+    state: "CA",
+    ranking: 6,
+    tuition: 65898,
+    city: "Pasadena",
+    acceptanceRate: "3%",
+    deadline: "1.3",
+    satRange: "N/A",
+    actRange: "N/A",
+    gpa: "N/A",
+    Division:3,
+  },
+  {
+    name: "Johns Hopkins University",
+    state: "MD",
+    ranking: 6,
+    tuition: 65230,
+    city: "Baltimore",
+    acceptanceRate: "8%",
+    deadline: "1.3",
+    satRange: "1530-1580",
+    actRange: "34-35",
+    gpa: "3.9",
+    Division:3,
+
+  },
+  {
+    name: "University of Chicago",
+    state: "IL",
+    ranking: 11,
+    tuition: 69324,
+    city: "Chicago",
+    acceptanceRate: "5%",
+    deadline: "1.6",
+    satRange: "1510-1570",
+    actRange: "34-35",
+    gpa: "N/A",
+    Division:3
+  },
+  {
+    name: "Emory University",
+    state: "GA",
+    ranking: 24,
+    tuition: 64280,
+    city: "Atlanta",
+    acceptanceRate: "11%",
+    deadline: "1.1",
+    satRange: "1460-1550",
+    actRange: "32-34",
+    gpa: "3.8",
+    Division:3
+
+  },
+  {
+    name: "New York University",
+    state: "NY",
+    ranking: 30,
+    tuition: 62796,
+    city: "New York",
+    acceptanceRate: "9%",
+    deadline: "1.5",
+    satRange: "1480-1570",
+    actRange: "33-35",
+    gpa: "3.8",    Division:3
+
+  },
+  {
+    name: "Tufts University",
+    state: "MA",
+    ranking: 37,
+    tuition: 70704,
+    city: "Medford",
+    acceptanceRate: "10%",
+    deadline: "1.4",
+    satRange: "1460-1550",
+    actRange: "33-35",
+    gpa: "N/A",
+    Division:3,
+
+  },
+  {
+    name: "University of Rochester",
+    state: "NY",
+    ranking: 44,
+    tuition: 67124,
+    city: "Rochester",
+    acceptanceRate: "36%",
+    deadline: "1.5",
+    satRange: "1400-1540",
+    actRange: "31-34",
+    gpa: "3.7",
+    Division:3,
+
+  },
+  {
     name: "Stanford University",
     state: "CA",
     ranking: 4,
@@ -9,7 +118,8 @@ const schools = [{
     deadline: "1.5",
     satRange: "1510 - 1580",
     actRange: "34 - 35",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
   },
   {
     name: "University of Illinois Urbana-Champaign",
@@ -21,7 +131,9 @@ const schools = [{
     deadline: "1.5",
     satRange: "1340-1530",
     actRange: "30-34",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Boston College",
@@ -33,7 +145,9 @@ const schools = [{
     deadline: "1.2",
     satRange: "1430-1540",
     actRange: "33-34",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of Wisconsin—Madison",
@@ -45,7 +159,9 @@ const schools = [{
     deadline: "1.15",
     satRange: "1350-1510",
     actRange: "28-32",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "Boston University",
@@ -57,7 +173,9 @@ const schools = [{
     deadline: "1.6",
     satRange: "1400-1520",
     actRange: "32-34",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "University of California--Los Angeles",
@@ -69,7 +187,9 @@ const schools = [{
     deadline: "11.30",
     satRange: "N/A",
     actRange: "N/A",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "University of California, Berkeley",
@@ -81,7 +201,9 @@ const schools = [{
     deadline: "11.30",
     satRange: "N/A",
     actRange: "N/A",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "University of California, Santa Barbara ",
@@ -93,7 +215,9 @@ const schools = [{
     deadline: "11.30",
     satRange: "N/A",
     actRange: "N/A",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   
   {
@@ -106,7 +230,9 @@ const schools = [{
     deadline: "1.15",
     satRange: "1440 - 1550",
     actRange: "32 - 35",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "University of California, San Diego",
@@ -118,7 +244,9 @@ const schools = [{
     deadline: "11.30",
     satRange: "N/A",
     actRange: "N/A",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "University of California, Davis",
@@ -130,7 +258,9 @@ const schools = [{
     deadline: "11.30",
     satRange: "N/A",
     actRange: "N/A",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of California—Irvine",
@@ -142,7 +272,9 @@ const schools = [{
     deadline: "11.30",
     satRange: "N/A",
     actRange: "N/A",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Columbia University",
@@ -154,7 +286,9 @@ const schools = [{
     deadline: "N/A",
     satRange: "1490 - 1580",
     actRange: "34 - 35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Cornell University",
@@ -166,7 +300,9 @@ const schools = [{
     deadline: "1.2",
     satRange: "1480 - 1560",
     actRange: "33 - 35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Yale University",
@@ -178,7 +314,9 @@ const schools = [{
     deadline: "1.2",
     satRange: "1500 - 1580",
     actRange: "33 - 35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Duke University",
@@ -190,7 +328,9 @@ const schools = [{
     deadline: "1.2",
     satRange: "1520 - 1570",
     actRange: "34 - 35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of North Carolina--Chapel Hill",
@@ -202,7 +342,9 @@ const schools = [{
     deadline: "1.15",
     satRange: "1370 - 1530",
     actRange: "30 - 34",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Northwestern University",
@@ -214,7 +356,9 @@ const schools = [{
     deadline: "1.1",
     satRange: "1490 - 1580",
     actRange: "33 - 35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of Pennsylvania",
@@ -226,7 +370,9 @@ const schools = [{
     deadline: "1.5",
     satRange: "1500 - 1570",
     actRange: "34 - 35",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "Brown University",
@@ -238,7 +384,9 @@ const schools = [{
     deadline: "1.3",
     satRange: "1500 - 1570",
     actRange: "34 - 35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of Notre Dame",
@@ -250,7 +398,9 @@ const schools = [{
     deadline: "1.3",
     satRange: "1440 - 1540",
     actRange: "33 - 35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Georgetown University",
@@ -262,7 +412,9 @@ const schools = [{
     deadline: "1.10",
     satRange: "1390 - 1550",
     actRange: "32 - 34",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of Virginia",
@@ -274,7 +426,9 @@ const schools = [{
     deadline: "1.5",
     satRange: "1410 - 1530",
     actRange: "32 - 34",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Vanderbilt University",
@@ -286,7 +440,9 @@ const schools = [{
     deadline: "1.1",
     satRange: "1510 - 1560",
     actRange: "34 - 35",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "University of Georgia",
@@ -298,7 +454,9 @@ const schools = [{
     deadline: "1.1",
     satRange: "1220-1420",
     actRange: "27-32",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Purdue University",
@@ -310,7 +468,9 @@ const schools = [{
     deadline: "1.15",
     satRange: "1190-1470",
     actRange: "27-34",
-    gpa: "3.8"
+    gpa: "3.8",
+    Division:1
+
   },
   {
     name: "Lehigh University",
@@ -322,7 +482,9 @@ const schools = [{
     deadline: "1.15",
     satRange: "1350-1490",
     actRange: "31-33",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of Maryland",
@@ -334,7 +496,9 @@ const schools = [{
     deadline: "Rolling",
     satRange: "1370-1520",
     actRange: "32-35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   
   {
@@ -347,7 +511,9 @@ const schools = [{
     deadline: "1.4",
     satRange: "1500 - 1570",
     actRange: "34 - 36",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "The University of Texas--Austin",
@@ -359,7 +525,9 @@ const schools = [{
     deadline: "12.1",
     satRange: "1310 - 1520",
     actRange: "29 - 34",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Washington University in St. Louis",
@@ -371,7 +539,9 @@ const schools = [{
     deadline: "1.2",
     satRange: "1500 - 1570",
     actRange: "33 - 35",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of Michigan--Ann Arbor",
@@ -383,7 +553,9 @@ const schools = [{
     deadline: "2.1",
     satRange: "1350 - 1530",
     actRange: "31 - 34",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "University of Florida",
@@ -395,7 +567,9 @@ const schools = [{
     deadline: "3.1",
     satRange: "1300 - 1480",
     actRange: "28 - 32",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "Harvard University",
@@ -407,7 +581,9 @@ const schools = [{
     deadline: "1.1",
     satRange: "1500 - 1580",
     actRange: "34 - 36",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "Princeton University",
@@ -419,7 +595,9 @@ const schools = [{
     deadline: "1.1",
     satRange: "1500 - 1580",
     actRange: "34 - 35",
-    gpa: "3.9"
+    gpa: "3.9",
+    Division:1
+
   },
   {
     name: "Rutgers University",
@@ -431,7 +609,9 @@ const schools = [{
     deadline: "N/A",
     satRange: "1270-1480",
     actRange: "28-33",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "Ohio State University",
@@ -443,11 +623,13 @@ const schools = [{
     deadline: "1.15",
     satRange: "1330-1480",
     actRange: "29-32",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   },
   {
     name: "University of Washington",
-    state: "OH",
+    state: "WA",
     ranking: 46,
     tuition: 12973,
     city: "Seattle",
@@ -455,7 +637,9 @@ const schools = [{
     deadline: "11.15",
     satRange: "1260-1510",
     actRange: "30-34",
-    gpa: "3.8"
+    gpa: "3.8",
+    Division:1
+
   },
   {
     name: "Wake Forest University",
@@ -467,37 +651,43 @@ const schools = [{
     deadline: "1.1",
     satRange: "1390-1510",
     actRange: "32-34",
-    gpa: "N/A"
+    gpa: "N/A",
+    Division:1
+
   }
   ];
+  schools.sort((a, b) => a.ranking - b.ranking);
+
       window.onload = function() {
         const userSAT = parseFloat(localStorage.getItem('userSAT'));
         const userACT = parseFloat(localStorage.getItem('userACT'));
         const userGPA = parseFloat(localStorage.getItem('userGPA'));
+        const userDIV=localStorage.getItem('userDivision');
         const infoBox = document.getElementById('school-Info');
   
-        if (isNaN(userSAT) || isNaN(userACT) || isNaN(userGPA)) {
-          infoBox.innerHTML = `<p style="text-align:center;">No valid input found. Please go back and enter your scores.</p>`;
-          return;
-        }
+        // if (isNaN(userSAT) && isNaN(userACT) && isNaN(userGPA)) {
+        //   infoBox.innerHTML = `<p style="text-align:center;">No valid input found. Please go back and enter your scores.</p>`;
+        //   return;
+        // }
   
         const matchedSchools = schools.filter(school => {
           const schoolGPA = parseFloat(school.gpa);
-          let satOk = false, actOk = false, gpaOk = false;
+          let satOk = false, actOk = false, gpaOk = false, divisionOk=false;
   
-          if (school.satRange && school.satRange !== "N/A") {
+          if (school.satRange) {
             const satRange = school.satRange.split('-').map(n => parseInt(n.trim()));
-            satOk = satRange.length === 2 && userSAT >= satRange[0] && userSAT <= satRange[1];
+            satOk = (satRange.length === 2 && userSAT >= satRange[0] && userSAT <= satRange[1])||isNaN(userSAT);
           }
   
-          if (school.actRange && school.actRange !== "N/A") {
+          if (school.actRange) {
             const actRange = school.actRange.split('-').map(n => parseInt(n.trim()));
-            actOk = actRange.length === 2 && userACT >= actRange[0] && userACT <= actRange[1];
+            actOk = (actRange.length === 2 && userACT >= actRange[0] && userACT <= actRange[1])||isNaN(userACT);
           }
+          divisionOk = (userDIV === "All") || (parseInt(userDIV) === school.Division);
+
+          gpaOk = isNaN(schoolGPA) || userGPA >= schoolGPA||isNaN(userGPA);
   
-          gpaOk = isNaN(schoolGPA) || userGPA >= schoolGPA;
-  
-          return satOk && actOk && gpaOk;
+          return satOk && actOk && gpaOk && divisionOk;
         });
   
         if (matchedSchools.length === 0) {
@@ -510,6 +700,7 @@ const schools = [{
           card.className = "school";
           card.innerHTML = `
             <h2>${school.name}</h2>
+            <p><strong>NCAA Division:</strong> ${school.Division}</p>
             <p><strong>Ranking:</strong> ${school.ranking ?? "N/A"}</p>
             <p><strong>Tuition:</strong> $${school.tuition}</p>
             <p><strong>Location:</strong> ${school.city}, ${school.state}</p>
@@ -518,6 +709,7 @@ const schools = [{
             <p><strong>SAT Range:</strong> ${school.satRange}</p>
             <p><strong>ACT Range:</strong> ${school.actRange}</p>
             <p><strong>High School GPA:</strong> ${school.gpa}</p>
+
           `;
           infoBox.appendChild(card);
         });
