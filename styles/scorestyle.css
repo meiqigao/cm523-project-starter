@@ -85,30 +85,31 @@ input:focus {
 }
 
 .enter-button {
-position: absolute;
-bottom: 250px;
-right: 50px;
-padding: 8px 20px;
-background: linear-gradient(135deg, black, #ff9a9e); /* same gradient */
-color: white;
-font-size: 18px;
-font-weight: bold;
-border: none;
-border-radius: 50px;
-cursor: pointer;
-font-family: "DynaPuff", cursive;
-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  position: absolute;
+  bottom: 250px;
+  right: 50px;
+  padding: 10px 26px;
+  background: linear-gradient(135deg, #f9d423, #f1cb88); 
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "DynaPuff", cursive;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .enter-button:hover {
-background: linear-gradient(135deg, #ff9a9e,black);
-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #f1cb88, #f9d423); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
 
 .enter-button:active {
-transform: scale(0.95);
+  transform: scale(0.95);
 }
+
 
 
 .score-img{
@@ -126,6 +127,50 @@ flex-direction: column;
 align-items: center;
 margin-top: 100px;
 }
+
+.division-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.division-buttons input[type="radio"] {
+  display: none;
+}
+
+.division-buttons label {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: "DynaPuff", cursive;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.division-buttons label:hover {
+  background-color: #f5e0c1;
+  border-color: #f1cb88;
+
+
+}
+
+.division-buttons input[type="radio"]:checked + label {
+  background-color: #f1cb88;
+  border-color: #f1cb88;
+
+  color: #000;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
 
 @media (max-width: 768px) {
     .top-bar button {
