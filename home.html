@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/homestyle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
@@ -17,6 +19,12 @@
     <a href="home.html"><button>Home</button></a>
     <a href="about.html"><button>About</button></a>
     <a href="map.html"><button>Map</button></a>
+  </div>
+  <div id="mySidebar" class="sidebar">
+    <div class="close-btn" onclick="closeSidebar()"> X </div>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="map.html">Map</a>
   </div>
 
   <div class="main-content">
@@ -67,7 +75,15 @@ Through the map or search function, you can find detailed information about each
 
     </div>
   </div>
+  <script>
+    function openSidebar() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
   
+    function closeSidebar() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+  </script>
 
 </body>
 </html>
