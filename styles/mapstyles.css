@@ -16,6 +16,12 @@ body {
 .hamburger {
   display: none;
 }
+.instruction {
+  text-align: center; 
+  margin-bottom: 12px;  
+  font-size: 16px;    
+  color: #555;        
+}
 .nav-buttons {
   display: flex;
 }
