@@ -10,44 +10,34 @@ body {
     overflow-x: hidden;
   }
 
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #f9d423, #ff4e50);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
 
-.nav-buttons {
-  display: flex;
-}
 
-.top-bar button {
-  margin-top: 10px;
-  margin-left: 40px;
-  margin-right: 20px;
-  padding: 14px 28px;
-  border: none;
-  background: linear-gradient(135deg, #f9d423, #ff4e50);
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  font-family: "DynaPuff", cursive;
+
+ .top-bar button {
+    margin-top: 10px;
+    margin-left: 40px;
+margin-right: 20px;
+padding: 14px 28px;
+border: none;
+background: linear-gradient(135deg, #f9d423, #ff4e50);
+color: white;
+font-size: 18px;
+font-weight: bold;
+border-radius: 50px; /* very round */
+cursor: pointer;
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+font-family: "DynaPuff", cursive;
 }
 
 .top-bar button:hover {
-  background: linear-gradient(135deg, #ff4e50, #f9d423);
-  transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+background: linear-gradient(135deg, #ff4e50, #f9d423);
+transform: scale(1.1);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .top-bar button:active {
-  transform: scale(0.95);
+transform: scale(0.95);
 }
 
 .menu-icon {
