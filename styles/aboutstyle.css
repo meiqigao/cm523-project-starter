@@ -159,7 +159,7 @@ color: inherit;
 @media (max-width: 768px) {
 
   body {
-    padding: 20px; /* smaller padding on mobile */
+    padding: 20px; 
   }
 
   .top-bar button {
@@ -199,8 +199,8 @@ color: inherit;
 
   .materials {
     flex-direction: column;
-    gap: 30px; /* much smaller gap */
-    margin-left: 0; /* center the materials */
+    gap: 30px; 
+    margin-left: 0; 
     align-items: center;
   }
 
