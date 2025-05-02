@@ -15,7 +15,7 @@ body {
 margin-right: 20px;
 padding: 14px 28px;
 border: none;
-background: linear-gradient(135deg, #f9d423, #ff4e50); /* colorful gradient */
+background: linear-gradient(135deg, #f9d423, #ff4e50); 
 color: white;
 font-size: 18px;
 font-weight: bold;
@@ -68,13 +68,13 @@ font-family: "DynaPuff", cursive;
 }
 
 .top-bar button:hover {
-background: linear-gradient(135deg, #ff4e50, #f9d423); /* reverse gradient */
-transform: scale(1.1); /* grow a bit on hover */
+background: linear-gradient(135deg, #ff4e50, #f9d423); 
+transform: scale(1.1); 
 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .top-bar button:active {
-transform: scale(0.95); /* small when clicking */
+transform: scale(0.95);
 }
 
 
