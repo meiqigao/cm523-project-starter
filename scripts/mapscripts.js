@@ -1039,7 +1039,7 @@ document.getElementById('searchInput').addEventListener('input', function(e) {
         if (name.includes(char)) score++;
       }
       const similarity = score / query.length;
-      return similarity > 0.6;  // adjustable threshold
+      return similarity > 0.6;  
     });
   }
 
@@ -1101,7 +1101,7 @@ stateSelect.addEventListener('change', function () {
 
   filteredSchools.forEach(school => {
     const card = document.createElement('div');
-    card.className = "school"; // You can make the .school class mobile-friendly in CSS
+    card.className = "school"; 
     card.innerHTML = `
       <h2>${school.name}</h2>
       <p><strong>Ranking:</strong> ${school.ranking ?? "N/A"}</p>
